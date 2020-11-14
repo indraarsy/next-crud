@@ -13,8 +13,8 @@ export default async (req, res) => {
                         q.Index("all_users"), // spesifik
                     ),
                 ),
+                (ref) => q.Get(ref),
             ),
-            (ref) => q.Get(ref),
         );
 
         res.status(200).json(users.data);
