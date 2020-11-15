@@ -8,10 +8,7 @@ const Table = () => {
     const { data, error } = useSWR("/api/users", fetcher);
 
     if (error) return <div>failed to load</div>;
-    if (!data) return <div>loading</div>;
 
-    const countData = data.length;
-    console.log(data);
     return (
         <Layout>
             <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -49,7 +46,7 @@ const Table = () => {
                             )}
                         </tbody>
                     </table>
-                    <NavControl countData={countData} />
+                    <NavControl countData={data ? data.length : null} />
                 </div>
             </div>
         </Layout>
