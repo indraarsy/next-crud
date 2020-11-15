@@ -14,7 +14,7 @@ const DataRow = ({ id, firstName, lastName, telephone, loading }) => (
                 <div className="ml-3">
                     <Link href="/users/[id]" as={`/users/${id}`}>
                         <p className="text-gray-900 whitespace-no-wrap">
-                            {firstName} {lastName} TEST
+                            {firstName} {lastName}
                         </p>
                     </Link>
                 </div>
